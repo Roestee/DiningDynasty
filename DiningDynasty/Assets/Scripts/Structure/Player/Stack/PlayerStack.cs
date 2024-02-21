@@ -27,7 +27,7 @@ namespace Structure.Player.Stack
         private Transform _tf;
         private Rigidbody _rb;
         private Collider _coll;
-        private StackPlayerInteractable _stackPlayerInteractable;
+        private PlayerInteractable _playerInteractable;
 
         private void Awake()
         {
@@ -35,16 +35,16 @@ namespace Structure.Player.Stack
             _rb = GetComponent<Rigidbody>();
             _coll = GetComponent<Collider>();
             
-            _stackPlayerInteractable = GetComponentInChildren<StackPlayerInteractable>();
-            _stackPlayerInteractable.OnStackInteract += OnStackInteract;
+            _playerInteractable = GetComponentInChildren<PlayerInteractable>();
+            _playerInteractable.OnPlayerInteract += OnPlayerInteract;
         }
 
-        private void OnStackInteract(PlayerBase player, bool interacted)
+        private void OnPlayerInteract(PlayerBase player, bool interacted)
         {
             if(!interacted)
                 return;
             
-            _stackPlayerInteractable.OnStackInteract -= OnStackInteract;
+            _playerInteractable.OnPlayerInteract -= OnPlayerInteract;
             _coll.enabled = false;
             _rb.isKinematic = true;
             player.OnInteractWithStack(this);

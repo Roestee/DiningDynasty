@@ -21,7 +21,7 @@ namespace Structure.Player.Stack.StackTakers
         [SerializeField] protected PlayerStackType takeStackType;
         [SerializeField] protected float stackTakeDuration = 0.2f;
 
-        private StackPlayerInteractable _takerInteractable;
+        private PlayerInteractable _takerInteractable;
         protected List<StackCell> Cells;
         private PlayerBase _currentInteract;
 
@@ -29,8 +29,8 @@ namespace Structure.Player.Stack.StackTakers
 
         private void Awake()
         {
-            _takerInteractable = GetComponentInChildren<StackPlayerInteractable>(true);
-            _takerInteractable.OnStackInteract += OnTakerInteract;
+            _takerInteractable = GetComponentInChildren<PlayerInteractable>(true);
+            _takerInteractable.OnPlayerInteract += OnTakerInteract;
 
             takeStackType = isTypeTaker ? takeStackType : PlayerStackType.None;
             Init();

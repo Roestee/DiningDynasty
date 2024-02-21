@@ -3,18 +3,18 @@ using Structure.Interact;
 
 namespace Structure.Player.Stack
 {
-    public class StackPlayerInteractable : SingleInteractable<PlayerBase>
+    public class PlayerInteractable : SingleInteractable<PlayerBase>
     {
-        public event Action<PlayerBase, bool> OnStackInteract;
+        public event Action<PlayerBase, bool> OnPlayerInteract;
         
         protected override void OnTriggerInteract(PlayerBase player)
         {
-            OnStackInteract?.Invoke(player, true);
+            OnPlayerInteract?.Invoke(player, true);
         }
 
         protected override void OnTriggerInteractExit(PlayerBase player)
         {
-            OnStackInteract?.Invoke(player, false);
+            OnPlayerInteract?.Invoke(player, false);
         }
     }
 }
