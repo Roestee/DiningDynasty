@@ -1201,8 +1201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7464d8b986144d4a8fa2de7ba027987f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  simplePools:
-  - {fileID: 11400000, guid: 74348132a4c0e274aacd75c5f1c5440a, type: 2}
+  coinPrefab: {fileID: 3913550167066719813, guid: 96cb74c8f4f3f6c49ba2cdb9458352be, type: 3}
 --- !u!1 &1445738775
 GameObject:
   m_ObjectHideFlags: 0

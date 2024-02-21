@@ -117,6 +117,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9140474476167927796, guid: 08066ee74c57c984dbfd81f4f07c7dcc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1318012617736076473}
+    - targetCorrespondingSourceObject: {fileID: 9140474476167927796, guid: 08066ee74c57c984dbfd81f4f07c7dcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2842515187494991113}
     - targetCorrespondingSourceObject: {fileID: 279625667028940207, guid: 08066ee74c57c984dbfd81f4f07c7dcc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7409990370315560165}
@@ -246,3 +249,15 @@ MonoBehaviour:
   columnCapacity: 4
   distanceBetweenStacks: 0.1
   distanceBetweenColumns: 0.5
+--- !u!114 &2842515187494991113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8587220247040509692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f136d680d284679901e62888f4f313f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

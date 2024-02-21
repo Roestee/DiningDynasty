@@ -5,7 +5,7 @@ using Structure.GenericObjectPooling.Abstracts;
 
 namespace Structure.GenericObjectPooling
 {
-    public class Pool<T> : IEnumerable where T: IPoolMember 
+    public class Pool<T> : IEnumerable where T: class, IPoolMember 
     {
         private List<T> _members = new List<T>();
         private HashSet<T> _unavailable = new HashSet<T>();
@@ -25,15 +25,26 @@ namespace Structure.GenericObjectPooling
         {
             foreach (var member in _members.Where(m => !_unavailable.Contains(m)))
             {
-                _unavailable.Add(member);
-                member.OnExitPool();
+                HandleMemberOnPull(member);
                 return member;
             }
             
             var newMember = Create();
-            _unavailable.Add(newMember);
-            newMember.OnExitPool();
+            HandleMemberOnPull(newMember);
             return newMember;
+        }
+
+        private void HandleMemberOnPull(T member)
+        {
+            _unavailable.Add(member);
+            member.OnExitPool();
+            member.OnDeath += OnMemberDeath;
+        }
+
+        private void OnMemberDeath(IPoolMember member)
+        {
+            member.OnDeath -= OnMemberDeath;       
+            Push(member as T);
         }
 
         public void Push(T member)

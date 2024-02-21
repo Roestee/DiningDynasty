@@ -6,13 +6,13 @@ namespace Structure.GenericObjectPooling.PoolingUseExample
 {
     public class Bullet : MonoBehaviour, IPoolMember
     {
-        public event EventHandler OnDeath;
+        public event Action<IPoolMember> OnDeath;
 
         [SerializeField] private float speed = 10f;
 
         private void Death()
         {
-            OnDeath?.Invoke(this, null);
+            OnDeath?.Invoke(this);
         }
 
         private void Update()

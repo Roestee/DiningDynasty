@@ -15,6 +15,7 @@ namespace Project.MeshOpener
         private PlayerInteractable _playerInteractable;
         private MeshOpenerUIController _uiController;
         private CurrencyController _currencyController;
+        private PlayerBase _currentPlayer;
         private Coroutine _counterCoroutine;
         private int _remainingCost;
         private bool _isCounterActive;
@@ -45,6 +46,7 @@ namespace Project.MeshOpener
                 
                 _remainingCost -= 1;
                 _uiController.UpdateText(_remainingCost, openCost);
+                _currentPlayer.ThrowCoin(transform);
             }
         }
 
@@ -55,6 +57,7 @@ namespace Project.MeshOpener
             
             if (interacted)
             {
+                _currentPlayer = player;
                 _isCounterActive = true;
                 _counterCoroutine = StartCoroutine(ActivateCounter());
                 return;

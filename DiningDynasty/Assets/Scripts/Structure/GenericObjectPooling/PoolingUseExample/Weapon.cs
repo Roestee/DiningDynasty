@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Structure.GenericObjectPooling.PoolingUseExample
 {
@@ -26,14 +25,6 @@ namespace Structure.GenericObjectPooling.PoolingUseExample
         private void Fire()
         {
             var bullet = _pool.Pull();
-            EventHandler handler = null;
-            handler = (sender, e) =>
-            {
-                _pool.Push(bullet);
-                bullet.OnDeath -= handler;
-            };
-                        
-            bullet.OnDeath += handler;
             bullet.gameObject.SetActive(true);
         }
     }
