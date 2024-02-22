@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openCost: 100
-  counterWaitTime: 0.02
+  counterWaitTime: 0.1
 --- !u!114 &4386746960501266720
 MonoBehaviour:
   m_ObjectHideFlags: 0

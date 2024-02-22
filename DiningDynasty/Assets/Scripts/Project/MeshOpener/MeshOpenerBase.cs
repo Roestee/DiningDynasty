@@ -10,7 +10,7 @@ namespace Project.MeshOpener
     public class MeshOpenerBase : MonoBehaviour
     {
         [SerializeField] private int openCost;
-        [SerializeField] private float counterWaitTime = 0.1f;
+        [SerializeField][Range(0.001f, 5f)] private float counterWaitTime = 0.1f;
         
         private PlayerInteractable _playerInteractable;
         private MeshOpenerUIController _uiController;
