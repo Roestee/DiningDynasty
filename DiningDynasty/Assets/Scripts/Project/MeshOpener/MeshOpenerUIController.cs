@@ -7,9 +7,9 @@ namespace Project.MeshOpener
     {
         [SerializeField] private TextMeshProUGUI remainingCostText;
 
-        public void UpdateText(int remainingAmount, int cost)
+        public void UpdateText(int remainingAmount)
         {
-            remainingCostText.text = $"{remainingAmount}/{cost}";
+            remainingCostText.text = $"{remainingAmount}";
         }
     }
 }

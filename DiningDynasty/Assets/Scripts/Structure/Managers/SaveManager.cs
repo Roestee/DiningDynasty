@@ -1,4 +1,5 @@
-﻿using Structure.Singleton;
+﻿using Project.MeshOpener;
+using Structure.Singleton;
 using UnityEngine;
 
 namespace Structure.Managers
@@ -13,6 +14,7 @@ namespace Structure.Managers
     {
         [SerializeField] private SaveType level = SaveType.PlayerPrefs;
         [SerializeField] private SaveType currency = SaveType.PlayerPrefs;
+        [SerializeField] private SaveType mesh = SaveType.PlayerPrefs;
         
         public int GetInt(string key, int defaultValue = 0, SaveType saveType = SaveType.PlayerPrefs)
         {
@@ -56,6 +58,22 @@ namespace Structure.Managers
         public void SetCurrency(CurrencyType type, int amount)
         {
             SetInt(GetCurrencyKey(type), amount, currency);
+        }
+
+        #endregion
+
+        #region Mesh Open
+
+        private string MeshRequiredAmountKey(MeshOpenerType type) => $"Mesh_{type}";
+
+        public int GetMeshRequiredAmount(MeshOpenerType type)
+        {
+            return GetInt(MeshRequiredAmountKey(type), -1, mesh);
+        }
+
+        public void SetMeshRequiredAmount(MeshOpenerType type, int value)
+        {
+            SetInt(MeshRequiredAmountKey(type), value, mesh);
         }
 
         #endregion

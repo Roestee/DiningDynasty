@@ -7,8 +7,16 @@ using Utilities.Helpers;
 
 namespace Project.MeshOpener
 {
+    public enum MeshOpenerType
+    {
+        None,
+        Area,
+        Machine
+    }
+    
     public class MeshOpenerBase : MonoBehaviour
     {
+        [SerializeField] private MeshOpenerType meshOpenerType;
         [SerializeField] private int openCost;
         [SerializeField][Range(0.001f, 5f)] private float counterWaitTime = 0.1f;
         
@@ -26,13 +34,14 @@ namespace Project.MeshOpener
             _uiController = GetComponent<MeshOpenerUIController>();
             _playerInteractable.OnPlayerInteract += OnPlayerInteract;
 
-            _remainingCost = openCost;
+            var cost = SaveManager.Instance.GetMeshRequiredAmount(meshOpenerType);
+            _remainingCost = cost == -1 ? openCost: cost;
         }
 
         private void Start()
         {
             _currencyController = CurrencyController.Instance;
-            _uiController.UpdateText(_remainingCost, openCost);
+            _uiController.UpdateText(_remainingCost);
         }
 
         private IEnumerator ActivateCounter()
@@ -45,7 +54,8 @@ namespace Project.MeshOpener
                     yield break;
                 
                 _remainingCost -= 1;
-                _uiController.UpdateText(_remainingCost, openCost);
+                SaveManager.Instance.SetMeshRequiredAmount(meshOpenerType, _remainingCost);
+                _uiController.UpdateText(_remainingCost);
                 _currentPlayer.ThrowCoin(transform);
             }
         }
