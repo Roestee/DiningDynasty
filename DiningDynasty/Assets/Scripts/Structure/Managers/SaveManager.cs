@@ -64,16 +64,16 @@ namespace Structure.Managers
 
         #region Mesh Open
 
-        private string MeshRequiredAmountKey(MeshOpenerType type) => $"Mesh_{type}";
+        private string MeshRequiredAmountKey(MeshOpenerType type, string specialType) => $"Mesh_{type}_{specialType}";
 
-        public int GetMeshRequiredAmount(MeshOpenerType type)
+        public int GetMeshRequiredAmount(MeshOpenerType type, string specialType)
         {
-            return GetInt(MeshRequiredAmountKey(type), -1, mesh);
+            return GetInt(MeshRequiredAmountKey(type, specialType), -1, mesh);
         }
 
-        public void SetMeshRequiredAmount(MeshOpenerType type, int value)
+        public void SetMeshRequiredAmount(MeshOpenerType type, string specialType, int value)
         {
-            SetInt(MeshRequiredAmountKey(type), value, mesh);
+            SetInt(MeshRequiredAmountKey(type, specialType), value, mesh);
         }
 
         #endregion
