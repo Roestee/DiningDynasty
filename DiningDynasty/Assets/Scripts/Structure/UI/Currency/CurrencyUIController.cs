@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Sirenix.Utilities;
 using Structure.Managers;
 using UnityEngine;

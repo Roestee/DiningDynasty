@@ -7,7 +7,7 @@
             var costString = "";
             if (cost >= 1000000)
             {
-                costString = ((float)cost / 1000000).ToString("0.0").Replace(",", ".") + "m";
+                costString = ((float)cost / 1000000).ToString("0.00").Replace(",", ".") + "m";
             }
             else if (cost >= 1000)
             {

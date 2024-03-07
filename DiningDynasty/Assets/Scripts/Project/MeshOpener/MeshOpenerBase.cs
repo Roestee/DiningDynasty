@@ -29,6 +29,7 @@ namespace Project.MeshOpener
         [Header("Animation")] 
         [SerializeField] private Ease meshOpenEase = Ease.OutBack;
         [SerializeField] private float meshOpenTime = 0.3f;
+        [SerializeField] private bool throwCoin;
         
         [Header("Mesh Type")]
         [SerializeField] private MeshOpenerType meshOpenerType;
@@ -76,6 +77,7 @@ namespace Project.MeshOpener
             if (!activate)
                 return;
             
+            _playerInteractable.OnPlayerInteract -= OnPlayerInteract;
             unlockObject.transform.DOScale(0, meshOpenTime)
                 .From()
                 .SetEase(meshOpenEase);
@@ -87,16 +89,21 @@ namespace Project.MeshOpener
             {
                 yield return GeneralHelpers.GetWait(counterWaitTime);
                 
-                if (_currencyController.TryCharge(CurrencyType.Money, 1))
+                if (!_currencyController.TryCharge(CurrencyType.Money, 1))
                     yield break;
                 
                 _remainingCost -= 1;
                 SaveManager.Instance.SetMeshRequiredAmount(meshOpenerType, GetSpecialType().ToString(),_remainingCost);
                 _uiController.UpdateText(_remainingCost);
-                _currentPlayer.ThrowCoin(transform);
                 
-                if(_remainingCost == 0)
-                    SetActiveUnlockMesh();
+                if(throwCoin)
+                    _currentPlayer.ThrowCoin(transform);
+
+                if (_remainingCost > 0) 
+                    continue;
+                
+                SetActiveUnlockMesh();
+                yield break;
             }
         }
 

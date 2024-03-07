@@ -21,12 +21,12 @@ namespace Structure.UI.Currency
 
         public CurrencyType CurrencyType => type;
         public Vector2 GetIconPosition() => currencyIconTf.position;
-        public void UpdateCurrencyText(int value) => CurrencyUnitHelper.IntToK(_currentCurrency);
+        public void UpdateCurrencyText() => currencyText.text = CurrencyUnitHelper.IntToK(_currentCurrency);
 
         public void UpdateCurrencyUI()
         {
             _currentCurrency = SaveManager.Instance.GetCurrency(type);
-            UpdateCurrencyText(_currentCurrency);
+            UpdateCurrencyText();
             
             _iconAnimateTween.Kill();
             

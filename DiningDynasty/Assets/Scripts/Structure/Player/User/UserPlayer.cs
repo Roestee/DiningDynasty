@@ -1,4 +1,5 @@
-﻿using Structure.UI;
+﻿using Structure.Managers;
+using Structure.UI;
 using UnityEngine;
 
 namespace Structure.Player.User
@@ -23,6 +24,9 @@ namespace Structure.Player.User
         private void Update()
         {
             HandleMovement(Time.deltaTime);
+            
+            if(Input.GetKeyDown(KeyCode.A))
+                Debug.Log(SaveManager.Instance.GetCurrency(CurrencyType.Money));
         }
 
         private void HandleMovement(float delta)
