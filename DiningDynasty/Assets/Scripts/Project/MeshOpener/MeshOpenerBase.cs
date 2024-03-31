@@ -37,12 +37,14 @@ namespace Project.MeshOpener
         private Coroutine _counterCoroutine;
         private int _remainingCost;
         private bool _isCounterActive;
+        private IOpenerMesh _openerMesh;
 
         protected abstract T GetSpecialType();
         
         protected virtual void Awake()
         {
             _playerInteractable = GetComponentInChildren<PlayerInteractable>();
+            _openerMesh = GetComponentInChildren<IOpenerMesh>();
             _uiController = GetComponent<MeshOpenerUIController>();
             
             _playerInteractable.OnPlayerInteract += OnPlayerInteract;
@@ -82,7 +84,8 @@ namespace Project.MeshOpener
             _playerInteractable.OnPlayerInteract -= OnPlayerInteract;
             unlockObject.transform.DOScale(0, meshOpenTime)
                 .From()
-                .SetEase(meshOpenEase);
+                .SetEase(meshOpenEase)
+                .OnComplete(() => _openerMesh.OnMeshOpen());
         }
 
         private IEnumerator ActivateCounter()

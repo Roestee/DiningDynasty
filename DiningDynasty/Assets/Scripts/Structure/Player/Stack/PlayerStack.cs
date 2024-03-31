@@ -6,7 +6,7 @@ namespace Structure.Player.Stack
     public enum PlayerStackType
     {
         None,
-        StackType1,
+        TomatoStack,
         StackType2,
         StackType3,
     }
