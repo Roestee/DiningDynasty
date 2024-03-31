@@ -1,5 +1,4 @@
 ﻿using Project.Coins;
-using Project.MeshOpener;
 using Structure.Player.Stack;
 using UnityEngine;
 
@@ -25,6 +24,7 @@ namespace Structure.Player
         {
             return PlayerStackController.RemoveStack(takeStackType);
         }
+        
         public void ThrowCoin(Transform targetTf)
         {
             CoinThrower.Throw(targetTf);

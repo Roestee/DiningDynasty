@@ -30,6 +30,7 @@ namespace Project.Fields.TomatoField
 
         public IEnumerator Grow()
         {
+            _myTransform.localScale = Vector3.zero;
             IsGrown = false;
             yield return Random.Range(minGrowStartDelay, maxGrowStartDelay);
 

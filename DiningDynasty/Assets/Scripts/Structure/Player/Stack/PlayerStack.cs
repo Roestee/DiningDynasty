@@ -39,7 +39,7 @@ namespace Structure.Player.Stack
             _playerInteractable.OnPlayerInteract += OnPlayerInteract;
         }
 
-        private void OnPlayerInteract(PlayerBase player, bool interacted)
+        public void OnPlayerInteract(PlayerBase player, bool interacted)
         {
             if(!interacted)
                 return;

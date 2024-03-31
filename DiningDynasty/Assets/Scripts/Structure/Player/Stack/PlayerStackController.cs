@@ -18,6 +18,8 @@ namespace Structure.Player.Stack
         private List<PlayerStack> _stackList;
         private List<StackCell> _cellList;
 
+        public bool CanTakeStack() => _cellList.Any(p => p.CurrentStack == null);
+
         protected virtual void Start()
         {
             Init();

@@ -1202,6 +1202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 3913550167066719813, guid: 96cb74c8f4f3f6c49ba2cdb9458352be, type: 3}
+  tomatoPrefab: {fileID: 8467978316061816362, guid: 08cd2992f1c95b84190621413030518b, type: 3}
 --- !u!1 &1445738775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,6 +1524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   currency: 0
+  mesh: 0
 --- !u!1001 &2089473601
 PrefabInstance:
   m_ObjectHideFlags: 0

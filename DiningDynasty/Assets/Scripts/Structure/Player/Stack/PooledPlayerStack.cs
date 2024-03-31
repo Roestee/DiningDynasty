@@ -21,6 +21,7 @@ namespace Structure.Player.Stack
 
         public void OnExitPool()
         {
+            
             gameObject.SetActive(true);
         }
 
