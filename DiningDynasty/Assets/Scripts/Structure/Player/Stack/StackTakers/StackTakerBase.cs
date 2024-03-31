@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
@@ -9,6 +10,8 @@ namespace Structure.Player.Stack.StackTakers
 {
     public abstract class StackTakerBase : MonoBehaviour
     {
+        public event Action<int, int> OnCountChange;
+
         [SerializeField] protected StackCell cellPrefab;
         [SerializeField] protected Transform cellsParent;
         [Header("Init Options")]
@@ -22,10 +25,13 @@ namespace Structure.Player.Stack.StackTakers
         [SerializeField] protected float stackTakeDuration = 0.2f;
 
         private PlayerInteractable _takerInteractable;
-        protected List<StackCell> Cells;
         private PlayerBase _currentInteract;
-
+        
+        protected List<StackCell> Cells;
         protected abstract void Init();
+        
+        public int GetStackCount() => Cells.Count(p => p.CurrentStack != null);
+        public int GetCapacity() => Cells.Count;
 
         private void Awake()
         {
@@ -58,6 +64,7 @@ namespace Structure.Player.Stack.StackTakers
 
                 cell.CurrentStack = stack;
                 stack.JumpToCell(cell);
+                OnCountChange?.Invoke(Cells.Count(p=>p.CurrentStack != null), Cells.Count);
                 yield return GeneralHelpers.GetWait(stackTakeDuration);
             }
         }
