@@ -8,13 +8,6 @@ using Utilities.Helpers;
 
 namespace Project.MeshOpener
 {
-    public enum MeshOpenerType
-    {
-        None,
-        Area,
-        Machine
-    }
-    
     public abstract class MeshOpenerBase<T> : MonoBehaviour
     {
         [Header("Unlock-Lock Objects")]
@@ -33,6 +26,9 @@ namespace Project.MeshOpener
         
         [Header("Mesh Type")]
         [SerializeField] private MeshOpenerType meshOpenerType;
+
+        [Space]
+        [SerializeField] private bool isDefaultOpen;
         
         private PlayerInteractable _playerInteractable;
         private MeshOpenerUIController _uiController;
@@ -54,6 +50,12 @@ namespace Project.MeshOpener
 
         protected virtual void Start()
         {
+            if (isDefaultOpen)
+            {
+                SetActiveUnlockMesh();
+                return;
+            }
+            
             var cost = SaveManager.Instance.GetMeshRequiredAmount(meshOpenerType, GetSpecialType().ToString());
             if (cost == 0)
             {

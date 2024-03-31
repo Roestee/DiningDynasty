@@ -1,4 +1,5 @@
-﻿using Project.MeshOpener;
+﻿using Project.Coins;
+using Project.MeshOpener;
 using Structure.Singleton;
 using UnityEngine;
 

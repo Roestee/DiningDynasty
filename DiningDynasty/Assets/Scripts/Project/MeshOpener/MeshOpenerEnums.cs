@@ -4,6 +4,14 @@
     {
         
     }
+    
+    public enum MeshOpenerType
+    {
+        None,
+        Area,
+        Machine,
+        Field
+    }
 
     public enum AreaType
     {
@@ -17,5 +25,12 @@
         MachineType1,
         MachineType2,
         MachineType3
+    }
+    
+    public enum FieldType
+    {
+        TomatoField,
+        FieldType2,
+        FieldType3
     }
 }

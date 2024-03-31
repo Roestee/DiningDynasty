@@ -3,7 +3,7 @@ using DG.Tweening;
 using Structure.GenericObjectPooling.Abstracts;
 using UnityEngine;
 
-namespace Project.MeshOpener
+namespace Project.Coins
 {
     public class Coin : MonoBehaviour, IThrowable, IPoolMember
     {

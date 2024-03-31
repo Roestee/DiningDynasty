@@ -1,7 +1,7 @@
 ﻿using Structure.GenericObjectPooling;
 using UnityEngine;
 
-namespace Project.MeshOpener
+namespace Project.Coins
 {
     public class CoinThrower : MonoBehaviour
     {
