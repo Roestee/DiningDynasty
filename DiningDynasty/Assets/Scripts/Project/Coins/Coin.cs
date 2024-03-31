@@ -37,9 +37,4 @@ namespace Project.Coins
 
         #endregion
     }
-
-    public interface IThrowable
-    {
-        void Throw(Transform targetTf);
-    }
 }

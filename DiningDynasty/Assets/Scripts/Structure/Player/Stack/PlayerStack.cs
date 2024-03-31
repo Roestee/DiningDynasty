@@ -29,7 +29,7 @@ namespace Structure.Player.Stack
         private Collider _coll;
         private PlayerInteractable _playerInteractable;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _tf = transform;
             _rb = GetComponent<Rigidbody>();
