@@ -291,6 +291,8 @@ MonoBehaviour:
   maxGrowTime: 4
   minGrowStartDelay: 1
   maxGrowStartDelay: 4
+  growStartColor: {r: 0, g: 1, b: 0, a: 1}
+  growEndColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2285645131982395462 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ce6d22c1272ff6043a685d269fead756, type: 3}
@@ -318,6 +320,8 @@ MonoBehaviour:
   maxGrowTime: 4
   minGrowStartDelay: 1
   maxGrowStartDelay: 4
+  growStartColor: {r: 0, g: 1, b: 0, a: 1}
+  growEndColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &5851134702096307406 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3962623016348849309, guid: ce6d22c1272ff6043a685d269fead756, type: 3}
@@ -340,6 +344,8 @@ MonoBehaviour:
   maxGrowTime: 4
   minGrowStartDelay: 1
   maxGrowStartDelay: 4
+  growStartColor: {r: 0, g: 1, b: 0, a: 1}
+  growEndColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7032557696158036183 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -456501110230462598, guid: ce6d22c1272ff6043a685d269fead756, type: 3}
@@ -362,3 +368,5 @@ MonoBehaviour:
   maxGrowTime: 4
   minGrowStartDelay: 1
   maxGrowStartDelay: 4
+  growStartColor: {r: 0, g: 1, b: 0, a: 1}
+  growEndColor: {r: 1, g: 1, b: 1, a: 1}

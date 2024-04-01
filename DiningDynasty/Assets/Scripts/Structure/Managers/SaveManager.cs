@@ -35,13 +35,13 @@ namespace Structure.Managers
 
         public int GetCurrentLevelIndex()
         {
-            return GetInt(GlobalConst.LevelKey, 1, level);
+            return GetInt(GlobalConsts.LevelKey, 1, level);
         }
 
         public void IncreaseLevelIndex(int value = 1)
         {
             var currentLevel = GetCurrentLevelIndex() + value;
-            SetInt(GlobalConst.LevelKey, currentLevel, level);
+            SetInt(GlobalConsts.LevelKey, currentLevel, level);
         }
 
         #endregion
