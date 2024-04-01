@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3588807130087153704, guid: d0923058d7cf56d4282faf8ff320d698, type: 3}
       propertyPath: m_Name
-      value: MachineOpener
+      value: MachineBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 8685551102949636483, guid: d0923058d7cf56d4282faf8ff320d698, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -93,5 +97,7 @@ MonoBehaviour:
   counterWaitTime: 0.1
   meshOpenEase: 27
   meshOpenTime: 0.3
+  throwCoin: 0
   meshOpenerType: 2
+  isDefaultOpen: 0
   machineType: 0
