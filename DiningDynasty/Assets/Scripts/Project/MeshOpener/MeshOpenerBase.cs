@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using DG.Tweening;
+using Sirenix.Utilities;
 using Structure.Managers;
 using Structure.Player;
 using Structure.Player.Stack;
@@ -37,14 +38,14 @@ namespace Project.MeshOpener
         private Coroutine _counterCoroutine;
         private int _remainingCost;
         private bool _isCounterActive;
-        private IOpenerMesh _openerMesh;
+        private IOpenerMesh[] _openerMeshes;
 
         protected abstract T GetSpecialType();
         
         protected virtual void Awake()
         {
             _playerInteractable = GetComponentInChildren<PlayerInteractable>();
-            _openerMesh = GetComponentInChildren<IOpenerMesh>();
+            _openerMeshes = GetComponentsInChildren<IOpenerMesh>(true);
             _uiController = GetComponent<MeshOpenerUIController>();
             
             _playerInteractable.OnPlayerInteract += OnPlayerInteract;
@@ -85,7 +86,7 @@ namespace Project.MeshOpener
             unlockObject.transform.DOScale(0, meshOpenTime)
                 .From()
                 .SetEase(meshOpenEase)
-                .OnComplete(() => _openerMesh.OnMeshOpen());
+                .OnComplete(() => _openerMeshes.ForEach(p=> p.OnMeshOpen()));
         }
 
         private IEnumerator ActivateCounter()
