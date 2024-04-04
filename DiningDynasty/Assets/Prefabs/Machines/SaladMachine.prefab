@@ -484,7 +484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5122394170735458247, guid: 258085bb1672ff34cbac1598f5a92fb5, type: 3}
       propertyPath: m_Name
-      value: LinearStackTaker
+      value: MachineStackTaker
       objectReference: {fileID: 0}
     - target: {fileID: 6512502850730801810, guid: 258085bb1672ff34cbac1598f5a92fb5, type: 3}
       propertyPath: m_LocalPosition.x

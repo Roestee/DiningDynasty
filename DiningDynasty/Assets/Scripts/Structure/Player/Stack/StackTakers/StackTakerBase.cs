@@ -32,6 +32,7 @@ namespace Structure.Player.Stack.StackTakers
         
         public int GetStackCount() => Cells.Count(p => p.CurrentStack != null);
         public int GetCapacity() => Cells.Count;
+        public PlayerStackType GetStackType() => takeStackType;
 
         private void Awake()
         {

@@ -14,6 +14,7 @@ namespace Project.Fields.Shelfs
             _stackTaker = GetComponentInChildren<StackTakerBase>(true);
             _stackTaker.OnCountChange += OnStackCountChange;
 
+            _uiController.SetIdentityImage(_stackTaker.GetStackType());
             OnStackCountChange(_stackTaker.GetStackCount(), _stackTaker.GetCapacity());
         }
 
