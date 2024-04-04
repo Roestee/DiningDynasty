@@ -59,15 +59,23 @@ namespace Structure.Player.Stack.StackTakers
                 if(stack == null)
                     yield break;
 
-                var cell = Cells.FirstOrDefault(p => p.CurrentStack == null);
-                if (cell == null)
+                if (!ThrowStack(stack))
                     yield break;
-
-                cell.CurrentStack = stack;
-                stack.JumpToCell(cell);
-                OnCountChange?.Invoke(Cells.Count(p=>p.CurrentStack != null), Cells.Count);
+                
                 yield return GeneralHelpers.GetWait(stackTakeDuration);
             }
+        }
+
+        public bool ThrowStack(PlayerStack stack)
+        {
+            var cell = Cells.FirstOrDefault(p => p.CurrentStack == null);
+            if (cell == null)
+                return false;
+
+            cell.CurrentStack = stack;
+            stack.JumpToCell(cell);
+            OnCountChange?.Invoke(Cells.Count(p=>p.CurrentStack != null), Cells.Count);
+            return true;
         }
 
         public PlayerStack GetStack()

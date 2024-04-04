@@ -1202,7 +1202,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 3913550167066719813, guid: 96cb74c8f4f3f6c49ba2cdb9458352be, type: 3}
-  tomatoPrefab: {fileID: 8467978316061816362, guid: 08cd2992f1c95b84190621413030518b, type: 3}
+  playerStackPools:
+  - stackType: 1
+    poolObject: {fileID: 8467978316061816362, guid: 08cd2992f1c95b84190621413030518b, type: 3}
+  - stackType: 5
+    poolObject: {fileID: 6600719221395529612, guid: 1750003f925da0e4eab7d97979f0d9b5, type: 3}
 --- !u!1 &1445738775
 GameObject:
   m_ObjectHideFlags: 0

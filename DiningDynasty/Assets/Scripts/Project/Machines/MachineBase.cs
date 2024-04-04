@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Structure.GenericObjectPooling;
 using Structure.Player.Stack;
 using Structure.Player.Stack.StackTakers;
 using UnityEngine;
@@ -10,7 +11,10 @@ namespace Project.Machines
     public class MachineBase : MonoBehaviour
     {
         [SerializeField] private StackTakerBase stackTaker;
+        [SerializeField] private StackTakerBase productTaker;
+        [Space]
         [SerializeField] private Transform dummyStackTf;
+        [Space]
         [SerializeField] private float workTime = 3f;
         [SerializeField] private float workAfterWaitTime = 0.5f;
         
@@ -64,11 +68,22 @@ namespace Project.Machines
                 _anim.SetTrigger(Empty);
                 _effectController.SetActiveCookingEffects(false);
                 _effectController.PlayCookedEffect();
+                
+                var product = SpawnProduct();
+                product.transform.position = dummyStackTf.position;
+                productTaker.ThrowStack(product);
 
                 yield return GeneralHelpers.GetWait(workAfterWaitTime);
             }
 
             _isWorking = false;
+        }
+        
+        private PooledPlayerStack SpawnProduct()
+        {
+            var pool = PoolsManager.Instance.GetStackPool(productTaker.GetStackType());
+            var product = pool.Pull();
+            return product;
         }
 
         protected virtual void OnDestroy()

@@ -66,7 +66,7 @@ namespace Project.Fields.TomatoField
                 var tomato = _tomatoes.FirstOrDefault(p => p.IsGrown);
                 StartCoroutine(tomato.Grow());
                 
-                var stack = PoolsManager.Instance.TomatoPool.Pull();
+                var stack = PoolsManager.Instance.GetStackPool(PlayerStackType.TomatoStack).Pull();
                 stack.transform.SetPositionAndRotation(tomato.transform.position, tomato.transform.rotation);
                 stack.OnPlayerInteract(_currentInteract, true);
             }

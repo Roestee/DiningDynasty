@@ -8,8 +8,14 @@ namespace Structure.Player.Stack
     {
         None,
         TomatoStack,
-        StackType2,
-        StackType3,
+        MeatStack,
+        PotatoStack,
+        FishStack,
+        /* Products */
+        SaladStack,
+        RoastedMeatStack,
+        FriesStack,
+        CookedFishStack,
     }
     
     public class PlayerStack: MonoBehaviour
