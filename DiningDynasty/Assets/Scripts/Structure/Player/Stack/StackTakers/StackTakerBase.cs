@@ -68,5 +68,16 @@ namespace Structure.Player.Stack.StackTakers
                 yield return GeneralHelpers.GetWait(stackTakeDuration);
             }
         }
+
+        public PlayerStack GetStack()
+        {
+            var cell = Cells.LastOrDefault(p => p.CurrentStack != null);
+            if (cell == null)
+                return null;
+
+            var stack = cell.CurrentStack;
+            cell.CurrentStack = null;
+            return stack;
+        }
     }
 }

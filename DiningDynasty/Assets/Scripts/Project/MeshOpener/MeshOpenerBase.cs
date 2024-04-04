@@ -27,6 +27,7 @@ namespace Project.MeshOpener
         
         [Header("Mesh Type")]
         [SerializeField] private MeshOpenerType meshOpenerType;
+        [SerializeField] private int id;
 
         [Space]
         [SerializeField] private bool isDefaultOpen;
@@ -38,14 +39,14 @@ namespace Project.MeshOpener
         private Coroutine _counterCoroutine;
         private int _remainingCost;
         private bool _isCounterActive;
-        private IOpenerMesh[] _openerMeshes;
+        private IOpenerMesh<T>[] _openerMeshes;
 
         protected abstract T GetSpecialType();
         
         protected virtual void Awake()
         {
             _playerInteractable = GetComponentInChildren<PlayerInteractable>();
-            _openerMeshes = GetComponentsInChildren<IOpenerMesh>(true);
+            _openerMeshes = GetComponentsInChildren<IOpenerMesh<T>>(true);
             _uiController = GetComponent<MeshOpenerUIController>();
             
             _playerInteractable.OnPlayerInteract += OnPlayerInteract;
@@ -59,7 +60,7 @@ namespace Project.MeshOpener
                 return;
             }
             
-            var cost = SaveManager.Instance.GetMeshRequiredAmount(meshOpenerType, GetSpecialType().ToString());
+            var cost = SaveManager.Instance.GetMeshRequiredAmount(meshOpenerType, id, GetSpecialType().ToString());
             if (cost == 0)
             {
                 SetActiveUnlockMesh();
@@ -99,7 +100,7 @@ namespace Project.MeshOpener
                     yield break;
                 
                 _remainingCost -= 1;
-                SaveManager.Instance.SetMeshRequiredAmount(meshOpenerType, GetSpecialType().ToString(),_remainingCost);
+                SaveManager.Instance.SetMeshRequiredAmount(meshOpenerType, id, GetSpecialType().ToString(),_remainingCost);
                 _uiController.UpdateText(_remainingCost);
                 
                 if(throwCoin)

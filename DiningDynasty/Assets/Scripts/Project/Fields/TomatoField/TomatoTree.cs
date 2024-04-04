@@ -10,7 +10,7 @@ using Utilities.Helpers;
 
 namespace Project.Fields.TomatoField
 {
-    public class TomatoTree : MonoBehaviour, IOpenerMesh
+    public class TomatoTree : MonoBehaviour, IOpenerMesh<FieldType>
     {
         [SerializeField] private float waitBeforeTakeStack = 0.5f;
         

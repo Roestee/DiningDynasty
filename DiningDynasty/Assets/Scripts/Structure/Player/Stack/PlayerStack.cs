@@ -1,3 +1,4 @@
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
@@ -68,6 +69,16 @@ namespace Structure.Player.Stack
             _stackSequence = DOTween.Sequence();
             _stackSequence.Append(_tf.DOLocalRotateQuaternion(Quaternion.identity, slideTime));
             _stackSequence.Join(_tf.DOLocalMove(Vector3.zero, slideTime));
+        }
+
+        public IEnumerator JumToPos(Vector3 position, Quaternion rotation)
+        {
+            _stackSequence.Kill();
+            _stackSequence = DOTween.Sequence();
+            _stackSequence.Append(_tf.DORotateQuaternion(rotation, jumpDuration));
+            _stackSequence.Join(_tf.DOJump(position, jumpPower, 1, jumpDuration));
+            
+            yield return _stackSequence.WaitForCompletion();
         }
     }
 }

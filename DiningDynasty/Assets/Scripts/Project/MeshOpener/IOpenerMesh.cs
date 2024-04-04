@@ -1,6 +1,6 @@
 ﻿namespace Project.MeshOpener
 {
-    public interface IOpenerMesh
+    public interface IOpenerMesh<T>
     {
         void OnMeshOpen();
     }

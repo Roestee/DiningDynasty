@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GrilledFishMachineAnimator
+  m_Controller: {fileID: 9100000, guid: 67d0439cd53223d49b0e2ae0defa0600, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 4e69ea4f10a67254283d9813ad5fee15, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a985ebc84ed449141ba0ba6a5a3e88f5, type: 2}

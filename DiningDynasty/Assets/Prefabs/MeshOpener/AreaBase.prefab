@@ -1,5 +1,98 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1673118309394116736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5407172179671805403}
+  m_Layer: 0
+  m_Name: Machines
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5407172179671805403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673118309394116736}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7546656306417594323}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5701962996903382484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4101256346912082792}
+  m_Layer: 0
+  m_Name: Shelfs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4101256346912082792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5701962996903382484}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7546656306417594323}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8080198885487845394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4595451760407060864}
+  m_Layer: 0
+  m_Name: Fields
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4595451760407060864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080198885487845394}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7546656306417594323}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5088968109641574433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50,11 +143,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3588807130087153704, guid: d0923058d7cf56d4282faf8ff320d698, type: 3}
       propertyPath: m_Name
-      value: AreaOpener
+      value: AreaBase
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7230907826652351681, guid: d0923058d7cf56d4282faf8ff320d698, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3324991769153718258, guid: d0923058d7cf56d4282faf8ff320d698, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4595451760407060864}
+    - targetCorrespondingSourceObject: {fileID: 3324991769153718258, guid: d0923058d7cf56d4282faf8ff320d698, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5407172179671805403}
+    - targetCorrespondingSourceObject: {fileID: 3324991769153718258, guid: d0923058d7cf56d4282faf8ff320d698, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4101256346912082792}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3588807130087153704, guid: d0923058d7cf56d4282faf8ff320d698, type: 3}
       insertIndex: -1
@@ -68,6 +171,11 @@ GameObject:
 --- !u!1 &4474013132207591842 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8685551102949636483, guid: d0923058d7cf56d4282faf8ff320d698, type: 3}
+  m_PrefabInstance: {fileID: 5088968109641574433}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7546656306417594323 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3324991769153718258, guid: d0923058d7cf56d4282faf8ff320d698, type: 3}
   m_PrefabInstance: {fileID: 5088968109641574433}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8597834147312027657 stripped
@@ -93,5 +201,7 @@ MonoBehaviour:
   counterWaitTime: 0.1
   meshOpenEase: 27
   meshOpenTime: 0.3
+  throwCoin: 0
   meshOpenerType: 1
+  isDefaultOpen: 0
   areaType: 0

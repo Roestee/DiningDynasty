@@ -21,8 +21,12 @@ namespace Structure.Player.Stack
 
         public void OnExitPool()
         {
-            
             gameObject.SetActive(true);
+        }
+        
+        public void PushToPool()
+        {
+            OnDeath?.Invoke(this);
         }
 
         #endregion

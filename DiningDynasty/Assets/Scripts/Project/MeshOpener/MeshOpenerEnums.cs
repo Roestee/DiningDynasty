@@ -15,14 +15,14 @@
 
     public enum AreaType
     {
-        AreaType1,
+        SaladArea,
         AreaType2,
         AreaType3
     }
 
     public enum MachineType
     {
-        MachineType1,
+        SaladMachine,
         MachineType2,
         MachineType3
     }
