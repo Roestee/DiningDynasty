@@ -86,6 +86,7 @@ namespace Structure.Player.Stack.StackTakers
 
             var stack = cell.CurrentStack;
             cell.CurrentStack = null;
+            OnCountChange?.Invoke(Cells.Count(p=>p.CurrentStack != null), Cells.Count);
             return stack;
         }
     }

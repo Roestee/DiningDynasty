@@ -1,4 +1,3 @@
-using System;
 using Structure.Player.Stack.StackTakers;
 using TMPro;
 using UnityEngine;
@@ -18,6 +17,7 @@ namespace Project.Stacks
                 return;
 
             _stackTaker.OnCountChange += OnCountChange;
+            OnCountChange(0, _stackTaker.GetCapacity());
         }
 
         private void OnCountChange(int count, int capacity)
