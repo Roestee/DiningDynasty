@@ -33,7 +33,7 @@ namespace Structure.Player.Stack.StackTakers
             }
         }
 
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
             for (var i = 0; i < columnCount; i++)
             {

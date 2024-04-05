@@ -10,14 +10,16 @@ using Utilities.Helpers;
 
 namespace Project.Fields.TomatoField
 {
-    public class TomatoTree : MonoBehaviour, IOpenerMesh<FieldType>
+    public class TomatoField : FieldBase, IOpenerMesh<FieldType>
     {
         [SerializeField] private float waitBeforeTakeStack = 0.5f;
         
         private Tomato[] _tomatoes;
         private PlayerInteractable _playerInteractable;
-
         private PlayerBase _currentInteract;
+        
+        public override Vector3 GetAiCollectPoint() => _playerInteractable.transform.position;
+        public override bool IsThereAvailableStack() => _tomatoes.Any(p => p.IsGrown);
 
         private void Start()
         {
@@ -27,7 +29,7 @@ namespace Project.Fields.TomatoField
             _tomatoes = GetComponentsInChildren<Tomato>(true);
             _tomatoes.ForEach(p => p.Init());
         }
-        
+
         public void OnMeshOpen()
         {
             _tomatoes.ForEach(p => StartCoroutine(p.Grow()));
