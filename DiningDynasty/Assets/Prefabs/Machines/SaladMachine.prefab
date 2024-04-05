@@ -450,6 +450,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 483459815214228196}
     m_Modifications:
+    - target: {fileID: 66554828041431256, guid: 258085bb1672ff34cbac1598f5a92fb5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.267
+      objectReference: {fileID: 0}
+    - target: {fileID: 66554828041431256, guid: 258085bb1672ff34cbac1598f5a92fb5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.347
+      objectReference: {fileID: 0}
+    - target: {fileID: 66554828041431256, guid: 258085bb1672ff34cbac1598f5a92fb5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 666934027339827328, guid: 258085bb1672ff34cbac1598f5a92fb5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.373
@@ -457,6 +469,10 @@ PrefabInstance:
     - target: {fileID: 666934027339827328, guid: 258085bb1672ff34cbac1598f5a92fb5, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.307
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072210394333913343, guid: 258085bb1672ff34cbac1598f5a92fb5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1677848428994544618, guid: 258085bb1672ff34cbac1598f5a92fb5, type: 3}
       propertyPath: columnCount

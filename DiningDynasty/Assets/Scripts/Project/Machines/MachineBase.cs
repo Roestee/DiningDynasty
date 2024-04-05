@@ -59,6 +59,7 @@ namespace Project.Machines
                 
                 var pooledStack = (PooledPlayerStack)stack;
                 pooledStack.PushToPool();
+                
                 _anim.SetTrigger(Work);
                 _effectController.SetActiveCookingEffects();
                 _progressUiController.StartProgress(workTime);
