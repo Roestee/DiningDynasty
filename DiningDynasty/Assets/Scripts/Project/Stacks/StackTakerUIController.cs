@@ -12,7 +12,7 @@ namespace Project.Stacks
 
         private void Awake()
         {
-            _stackTaker = GetComponentInChildren<StackTakerBase>();
+            _stackTaker = GetComponentInChildren<StackTakerBase>(true);
             if (_stackTaker == null)
                 return;
 

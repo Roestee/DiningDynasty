@@ -58,7 +58,6 @@ namespace Project.Player.Workers.States
                 return;
             
             _stackCount += 1;
-            Debug.Log(_stackCount);
             if (_stackCount < TotalStackCount)
                 return;
             
