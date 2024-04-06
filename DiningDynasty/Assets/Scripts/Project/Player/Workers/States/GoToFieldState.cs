@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Project.Fields;
 using Structure.Player;
+using UnityEngine;
 
 namespace Project.Player.Workers.States
 {
@@ -10,7 +11,7 @@ namespace Project.Player.Workers.States
         private int _stackCount;
         private bool _isArrive;
 
-        private const float StopDistance = 0.1f;
+        private const float StopDistance = 2f;
         private const int TotalStackCount = 4;
 
         public GoToFieldState(Worker worker) : base(worker)
@@ -57,6 +58,7 @@ namespace Project.Player.Workers.States
                 return;
             
             _stackCount += 1;
+            Debug.Log(_stackCount);
             if (_stackCount < TotalStackCount)
                 return;
             

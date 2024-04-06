@@ -53,10 +53,7 @@ namespace Project.Machines
             {
                 var stack = stackTaker.GetStack();
                 if (stack == null)
-                {
-                    Debug.LogError("There is no stack available!");
                     break;
-                }
 
                 yield return StartCoroutine(stack.JumToPos(dummyStackTf.position, dummyStackTf.rotation));
                 
