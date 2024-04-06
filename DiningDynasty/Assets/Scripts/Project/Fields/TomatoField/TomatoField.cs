@@ -71,6 +71,8 @@ namespace Project.Fields.TomatoField
                 var stack = PoolsManager.Instance.GetStackPool(PlayerStackType.TomatoStack).Pull();
                 stack.transform.SetPositionAndRotation(tomato.transform.position, tomato.transform.rotation);
                 stack.OnPlayerInteract(_currentInteract, true);
+                
+                FireCollectEvent(_currentInteract);
             }
         }
 

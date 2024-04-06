@@ -26,6 +26,9 @@ namespace Project.Machines
         private static readonly int Work = Animator.StringToHash("Work");
         private static readonly int Empty = Animator.StringToHash("Empty");
 
+        public bool CanTakeStack() => stackTaker.CanTakeStack();
+        public Vector3 GetAiCollectPoint() => stackTaker.transform.position;
+        
         protected virtual void Awake()
         {
             _anim = GetComponent<Animator>();

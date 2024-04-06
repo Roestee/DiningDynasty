@@ -14,8 +14,9 @@ namespace Project.Player.Workers
         [SerializeField] private JobEnum[] jobOrder;
         
         public NavMeshAgent NavMeshAgent { get; private set; }
-        public WorkerStateMachine WorkerStateMachine { get; private set; }
-        public WorkerMovementController WorkerMovementController { get; private set; }
+        public WorkerStateMachine StateMachine { get; private set; }
+        public WorkerMovementController MovementController { get; private set; }
+        public WorkerAnimationController AnimationController { get; private set; }
         public AreaBase CurrentArea { get; private set; }
         public IEnumerable<JobEnum> JobOrder => jobOrder;
 
@@ -24,8 +25,9 @@ namespace Project.Player.Workers
             base.Awake();
 
             NavMeshAgent = GetComponent<NavMeshAgent>();
-            WorkerStateMachine = GetComponent<WorkerStateMachine>();
-            WorkerMovementController = GetComponent<WorkerMovementController>();
+            StateMachine = GetComponent<WorkerStateMachine>();
+            MovementController = GetComponent<WorkerMovementController>();
+            AnimationController = GetComponent<WorkerAnimationController>();
             
             CheckForArea();
         }
@@ -37,6 +39,18 @@ namespace Project.Player.Workers
                 return;
             
             CurrentArea = results.First().GetComponent<AreaBase>();
+        }
+
+        public void HandleMovement(Vector3 position)
+        {
+            MovementController.Move(position, Time.deltaTime);
+            AnimationController.SetMovementSpeed();
+        }
+
+        public void StopMovement()
+        {
+            MovementController.Stop();
+            AnimationController.SetMovementSpeed(0f);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace Project.Player.Workers.States
                 switch (job)
                 {
                     case JobEnum.Farm:
-                        Worker.WorkerStateMachine.SetState(new GoToFieldState(Worker));
+                        Worker.StateMachine.SetState(new GoToFieldState(Worker));
                         return;
                     case JobEnum.Delivery:
                         return;

@@ -11,6 +11,7 @@ namespace Project.Player.Workers
         private void Awake()
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
+            _navMeshAgent.speed = movementSpeed;
             _navMeshAgent.isStopped = true;
         }
 
@@ -18,6 +19,11 @@ namespace Project.Player.Workers
         {
             _navMeshAgent.SetDestination(input);
             _navMeshAgent.isStopped = false;
+        }
+
+        public void Stop()
+        {
+            _navMeshAgent.isStopped = true;
         }
     }
 }
