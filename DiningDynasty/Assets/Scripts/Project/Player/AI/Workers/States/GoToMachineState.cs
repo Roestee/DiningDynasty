@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Project.Machines;
 
-namespace Project.Player.Workers.States
+namespace Project.Player.AI.Workers.States
 {
     public class GoToMachineState : WorkerStateBase
     {

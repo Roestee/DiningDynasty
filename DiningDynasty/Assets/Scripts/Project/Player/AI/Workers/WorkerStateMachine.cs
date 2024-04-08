@@ -1,7 +1,7 @@
-﻿using Project.Player.Workers.States;
+﻿using Project.Player.AI.Workers.States;
 using Structure.Player.AI;
 
-namespace Project.Player.Workers
+namespace Project.Player.AI.Workers
 {
     public class WorkerStateMachine : StateMachineBase
     {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Project.Player.Workers.States
+﻿namespace Project.Player.AI.Workers.States
 {
     public enum JobEnum
     {

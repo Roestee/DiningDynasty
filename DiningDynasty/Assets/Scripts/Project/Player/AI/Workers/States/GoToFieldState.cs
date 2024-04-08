@@ -1,9 +1,8 @@
 ﻿using System.Linq;
 using Project.Fields;
 using Structure.Player;
-using UnityEngine;
 
-namespace Project.Player.Workers.States
+namespace Project.Player.AI.Workers.States
 {
     public class GoToFieldState : WorkerStateBase
     {

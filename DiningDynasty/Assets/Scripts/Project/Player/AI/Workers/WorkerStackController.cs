@@ -1,6 +1,6 @@
 ﻿using Structure.Player.Stack;
 
-namespace Project.Player.Workers
+namespace Project.Player.AI.Workers
 {
     public class WorkerStackController : PlayerStackController
     {

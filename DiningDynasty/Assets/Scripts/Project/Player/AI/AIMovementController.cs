@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Project.Player.Workers
+namespace Project.Player.AI
 {
-    public class WorkerMovementController : PlayerMovementBase
+    public class AIMovementController : PlayerMovementBase
     {
         private NavMeshAgent _navMeshAgent;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _navMeshAgent.speed = movementSpeed;

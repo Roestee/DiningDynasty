@@ -1,6 +1,6 @@
 ﻿using Structure.Player.AI;
 
-namespace Project.Player.Workers.States
+namespace Project.Player.AI.Workers.States
 {
     public abstract class WorkerStateBase : StateBase
     {
