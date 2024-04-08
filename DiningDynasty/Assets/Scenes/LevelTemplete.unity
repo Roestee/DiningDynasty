@@ -1769,6 +1769,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5049083233815634975, guid: 075a9dd78374ee341a975e85ae9d05e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049083233815634975, guid: 075a9dd78374ee341a975e85ae9d05e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.06
+      objectReference: {fileID: 0}
     - target: {fileID: 7464429885158922418, guid: 075a9dd78374ee341a975e85ae9d05e7, type: 3}
       propertyPath: m_Name
       value: SaladArea

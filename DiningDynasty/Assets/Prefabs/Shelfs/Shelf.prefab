@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 144353858743434644}
   - component: {fileID: 3248926103875595060}
   - component: {fileID: 8517199887534905380}
+  - component: {fileID: 6828432127899484370}
   m_Layer: 5
   m_Name: ShelfCanvas
   m_TagString: Untagged
@@ -455,6 +456,20 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
+--- !u!114 &6828432127899484370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4829767362288740620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5097991cbf421e88170a35b1249e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onlyRotateOnStart: 1
+  rotateSmoothness: 5
 --- !u!1 &5557510323271126153
 GameObject:
   m_ObjectHideFlags: 0

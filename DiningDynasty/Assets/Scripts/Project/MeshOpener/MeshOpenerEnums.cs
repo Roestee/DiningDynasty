@@ -10,7 +10,8 @@
         None,
         Area,
         Machine,
-        Field
+        Field,
+        Table,
     }
 
     public enum AreaType
@@ -32,5 +33,10 @@
         TomatoField,
         FieldType2,
         FieldType3
+    }
+
+    public enum TableType
+    {
+        TableType1,
     }
 }
