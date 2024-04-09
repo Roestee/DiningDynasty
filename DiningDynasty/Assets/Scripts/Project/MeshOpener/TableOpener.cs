@@ -7,5 +7,10 @@ namespace Project.MeshOpener
         [SerializeField] private TableType tableType;
         
         protected override TableType GetSpecialType() => tableType;
+        
+        public override void OnMeshOpen()
+        {
+            
+        }
     }
 }

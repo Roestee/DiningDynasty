@@ -1,14 +1,14 @@
-﻿namespace Project.Player.AI.Workers.States
+﻿namespace Project.Player.AI.Customers.States
 {
-    public class IdleState : WorkerStateBase
+    public class IdleState: CustomerStateBase
     {
-        public IdleState(Worker worker) : base(worker)
+        public IdleState(Customer customer) : base(customer)
         {
         }
 
         protected override void DoOnStateStart()
         {
-            Worker.StopMovement();
+            Customer.StopMovement();
         }
 
         protected override void DoOnStateEnd()

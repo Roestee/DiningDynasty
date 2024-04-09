@@ -42,6 +42,7 @@ namespace Project.MeshOpener
         private IOpenerMesh<T>[] _openerMeshes;
 
         protected abstract T GetSpecialType();
+        public abstract void OnMeshOpen();
         
         protected virtual void Awake()
         {
@@ -87,7 +88,11 @@ namespace Project.MeshOpener
             unlockObject.transform.DOScale(0, meshOpenTime)
                 .From()
                 .SetEase(meshOpenEase)
-                .OnComplete(() => _openerMeshes.ForEach(p=> p.OnMeshOpen()));
+                .OnComplete(() =>
+                {
+                    OnMeshOpen();
+                    _openerMeshes.ForEach(p => p.OnMeshOpen());
+                });
         }
 
         private IEnumerator ActivateCounter()

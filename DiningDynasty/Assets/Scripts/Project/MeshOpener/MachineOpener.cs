@@ -7,5 +7,10 @@ namespace Project.MeshOpener
         [SerializeField] private MachineType machineType;
 
         protected override MachineType GetSpecialType() => machineType;
+        
+        public override void OnMeshOpen()
+        {
+            
+        }
     }
 }

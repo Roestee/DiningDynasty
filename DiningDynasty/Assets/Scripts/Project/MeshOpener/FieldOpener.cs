@@ -7,5 +7,10 @@ namespace Project.MeshOpener
         [SerializeField] private FieldType fieldType;
         
         protected override FieldType GetSpecialType() => fieldType;
+        
+        public override void OnMeshOpen()
+        {
+            
+        }
     }
 }
