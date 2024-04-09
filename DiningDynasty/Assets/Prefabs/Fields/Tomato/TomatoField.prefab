@@ -114,6 +114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TomatoField
       objectReference: {fileID: 0}
+    - target: {fileID: 2986113177686708555, guid: 72df07edb6355c748875e1ede5fa180b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 5623356293091875951, guid: 72df07edb6355c748875e1ede5fa180b, type: 3}
       propertyPath: m_IsActive
       value: 1

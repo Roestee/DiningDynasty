@@ -5,9 +5,13 @@ namespace Structure.Player.Stack.StackTakers
 {
     public class LinearStackTaker : StackTakerBase
     {
+        [Space]
         [SerializeField] private int horizontalCount = 3;
         [SerializeField] private int verticalCount = 2;
+        [Space]
         [SerializeField] private float distanceBetweenStack = 1f;
+        [Space]
+        [SerializeField] private float horizontalOffset, verticalOffset;
 
         [Header("Gizmos")] 
         [SerializeField] private float cellRadius = 0.1f;
@@ -27,7 +31,7 @@ namespace Structure.Player.Stack.StackTakers
                         var xPos = (k - horizontalCount * 0.5f) * distanceBetweenStack;
                         var cell = Instantiate(cellPrefab, cellsParent);
                         Cells.Add(cell);
-                        cell.transform.localPosition = new Vector3(xPos, yPos, zPos);
+                        cell.transform.localPosition = new Vector3(xPos + horizontalOffset, yPos, zPos + verticalOffset);
                     }
                 }
             }
@@ -46,7 +50,7 @@ namespace Structure.Player.Stack.StackTakers
                         var xPos = (k - horizontalCount * 0.5f) * distanceBetweenStack;
                         var currentPos = transform.position;
                         Gizmos.color = Color.red;
-                        Gizmos.DrawSphere( new Vector3(currentPos.x + xPos, currentPos.y + yPos, currentPos.z + zPos), cellRadius);
+                        Gizmos.DrawSphere( new Vector3(currentPos.x + xPos + horizontalOffset, currentPos.y + yPos, currentPos.z + zPos + verticalOffset), cellRadius);
                         Gizmos.color = Color.white;
                     }
                 }
