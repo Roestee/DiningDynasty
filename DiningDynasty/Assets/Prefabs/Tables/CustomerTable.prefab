@@ -131,6 +131,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7152228062376439619, guid: fb038906690576d4b892c885cdd595b3, type: 3}
+      propertyPath: moveForwardPosition
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152228062376439619, guid: fb038906690576d4b892c885cdd595b3, type: 3}
+      propertyPath: moveBackwardPosition
+      value: -0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7891044759021100131, guid: fb038906690576d4b892c885cdd595b3, type: 3}
       propertyPath: m_Name
       value: Chair
@@ -203,6 +211,22 @@ PrefabInstance:
     - target: {fileID: 6726075220040772842, guid: fb038906690576d4b892c885cdd595b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152228062376439619, guid: fb038906690576d4b892c885cdd595b3, type: 3}
+      propertyPath: moveForwardPosition
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152228062376439619, guid: fb038906690576d4b892c885cdd595b3, type: 3}
+      propertyPath: moveBackwardPosition
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240202026253679907, guid: fb038906690576d4b892c885cdd595b3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240202026253679907, guid: fb038906690576d4b892c885cdd595b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 7891044759021100131, guid: fb038906690576d4b892c885cdd595b3, type: 3}
       propertyPath: m_Name

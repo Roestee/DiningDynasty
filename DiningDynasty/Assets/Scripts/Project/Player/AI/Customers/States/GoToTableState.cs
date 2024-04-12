@@ -38,7 +38,7 @@ namespace Project.Player.AI.Customers.States
             _currentChair = _currentTable.GetAvailableChair();
             _currentChair.CurrentCustomer = Customer;
             
-            Customer.HandleMovement(_currentChair.transform.position);
+            Customer.HandleMovement(_currentChair.AiTargetTf.position);
         }
 
         private void CheckIsArrive()

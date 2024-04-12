@@ -11,7 +11,7 @@ namespace Project.Player
         
         public void OnMeshSetActive(bool active = true)
         {
-            
+            gameObject.SetActive(active);
         }
     }
 }
