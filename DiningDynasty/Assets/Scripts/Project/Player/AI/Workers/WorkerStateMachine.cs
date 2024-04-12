@@ -14,7 +14,7 @@ namespace Project.Player.AI.Workers
 
         public override void SetDefaultState()
         {
-            SetState(new LookForJobState(_worker));
+            SetState(new WorkerLookForJobState(_worker));
         }
 
         public override void SetStartState()

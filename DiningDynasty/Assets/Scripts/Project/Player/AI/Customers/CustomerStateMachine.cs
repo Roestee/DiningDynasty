@@ -1,4 +1,5 @@
-﻿using Structure.Player.AI;
+﻿using Project.Player.AI.Customers.States;
+using Structure.Player.AI;
 
 namespace Project.Player.AI.Customers
 {
@@ -13,7 +14,7 @@ namespace Project.Player.AI.Customers
         
         public override void SetDefaultState()
         {
-            
+            SetState(new LookingForTableState(_customer));
         }
 
         public override void SetStartState()
