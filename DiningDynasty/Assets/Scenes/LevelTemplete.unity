@@ -1266,7 +1266,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4924179130817329037, guid: 4b3638edf9ab58c4c87e9402900ffc09, type: 3}
       propertyPath: m_Name
-      value: HamburgerArea
+      value: SteakArea
       objectReference: {fileID: 0}
     - target: {fileID: 6346501257217102113, guid: 4b3638edf9ab58c4c87e9402900ffc09, type: 3}
       propertyPath: m_LocalPosition.x

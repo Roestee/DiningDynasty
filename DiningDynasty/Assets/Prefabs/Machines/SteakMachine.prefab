@@ -216,7 +216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3669205532975045834
 Transform:
   m_ObjectHideFlags: 0
@@ -687,7 +687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1677848428994544618, guid: 258085bb1672ff34cbac1598f5a92fb5, type: 3}
       propertyPath: takeStackType
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1677848428994544618, guid: 258085bb1672ff34cbac1598f5a92fb5, type: 3}
       propertyPath: verticalCount

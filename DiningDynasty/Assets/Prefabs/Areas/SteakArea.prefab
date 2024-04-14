@@ -306,6 +306,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SteakMachine
       objectReference: {fileID: 0}
+    - target: {fileID: 8228765222972233819, guid: ff11c595ff4d5f34d8b9ef861a77c616, type: 3}
+      propertyPath: id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228765222972233819, guid: ff11c595ff4d5f34d8b9ef861a77c616, type: 3}
+      propertyPath: isDefaultOpen
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -367,6 +375,10 @@ PrefabInstance:
     - target: {fileID: 1828223216418522430, guid: ff11c595ff4d5f34d8b9ef861a77c616, type: 3}
       propertyPath: m_Name
       value: SteakMachine (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228765222972233819, guid: ff11c595ff4d5f34d8b9ef861a77c616, type: 3}
+      propertyPath: id
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -448,6 +460,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8641978468011745391, guid: f6cfd8dc8e7d98949a7d119597e56e62, type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8641978468011745391, guid: f6cfd8dc8e7d98949a7d119597e56e62, type: 3}
+      propertyPath: areaType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 387989172577142110, guid: f6cfd8dc8e7d98949a7d119597e56e62, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9
@@ -550,7 +570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8597834147312027657, guid: f6cfd8dc8e7d98949a7d119597e56e62, type: 3}
       propertyPath: m_Name
-      value: HamburgerArea
+      value: SteakArea
       objectReference: {fileID: 0}
     - target: {fileID: 8653939876629560156, guid: f6cfd8dc8e7d98949a7d119597e56e62, type: 3}
       propertyPath: m_LocalScale.x
@@ -610,7 +630,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6919782206807719192, guid: f6cfd8dc8e7d98949a7d119597e56e62, type: 3}
       insertIndex: 10
       addedObject: {fileID: 7149946913736508820}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8597834147312027657, guid: f6cfd8dc8e7d98949a7d119597e56e62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8196080696972094447}
   m_SourcePrefab: {fileID: 100100000, guid: f6cfd8dc8e7d98949a7d119597e56e62, type: 3}
 --- !u!4 &273792664951183706 stripped
 Transform:
@@ -622,6 +645,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4101256346912082792, guid: f6cfd8dc8e7d98949a7d119597e56e62, type: 3}
   m_PrefabInstance: {fileID: 3677072886591651716}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4924179130817329037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8597834147312027657, guid: f6cfd8dc8e7d98949a7d119597e56e62, type: 3}
+  m_PrefabInstance: {fileID: 3677072886591651716}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8196080696972094447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4924179130817329037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93d1e9b124a4c0a9aa693c19c543367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5985168524058051228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6919782206807719192, guid: f6cfd8dc8e7d98949a7d119597e56e62, type: 3}

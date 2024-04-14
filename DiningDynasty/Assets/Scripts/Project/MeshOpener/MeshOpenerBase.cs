@@ -46,7 +46,7 @@ namespace Project.MeshOpener
         
         protected virtual void Awake()
         {
-            _playerInteractable = GetComponentInChildren<PlayerInteractable>();
+            _playerInteractable = GetComponentInChildren<PlayerInteractable>(true);
             _openerMeshes = GetComponentsInChildren<IOpenerMesh<T>>(true);
             _uiController = GetComponent<MeshOpenerUIController>();
             
