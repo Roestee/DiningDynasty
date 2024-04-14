@@ -57,14 +57,14 @@ namespace Project.MeshOpener
         {
             if (isDefaultOpen)
             {
-                SetActiveUnlockMesh();
+                SetActiveUnlockMesh(true, true);
                 return;
             }
             
             var cost = SaveManager.Instance.GetMeshRequiredAmount(meshOpenerType, id, GetSpecialType().ToString());
             if (cost == 0)
             {
-                SetActiveUnlockMesh();
+                SetActiveUnlockMesh(true, true);
                 return;
             }
 
@@ -76,7 +76,7 @@ namespace Project.MeshOpener
             SetActiveUnlockMesh(false);
         }
 
-        private void SetActiveUnlockMesh(bool activate = true)
+        private void SetActiveUnlockMesh(bool activate = true, bool instant = false)
         {
             unlockObject.SetActive(activate);
             lockObject.SetActive(!activate);
@@ -85,6 +85,13 @@ namespace Project.MeshOpener
                 return;
             
             _playerInteractable.OnPlayerInteract -= OnPlayerInteract;
+            if (instant)
+            {
+                OnMeshOpen();
+                _openerMeshes.ForEach(p => p.OnMeshOpen());
+                return;
+            }
+            
             unlockObject.transform.DOScale(0, meshOpenTime)
                 .From()
                 .SetEase(meshOpenEase)

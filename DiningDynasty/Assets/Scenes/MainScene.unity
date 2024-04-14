@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1205,8 +1205,20 @@ MonoBehaviour:
   playerStackPools:
   - stackType: 1
     poolObject: {fileID: 8467978316061816362, guid: 08cd2992f1c95b84190621413030518b, type: 3}
+  - stackType: 2
+    poolObject: {fileID: 6600719221395529612, guid: c6249b9540afd8c4f9710e7ee7186eb9, type: 3}
+  - stackType: 3
+    poolObject: {fileID: 6600719221395529612, guid: 356b63562a7e43d4b985ec0423e081db, type: 3}
+  - stackType: 4
+    poolObject: {fileID: 6600719221395529612, guid: e9048a9faca5fb34a8f687e222a31fe3, type: 3}
   - stackType: 5
     poolObject: {fileID: 6600719221395529612, guid: 1750003f925da0e4eab7d97979f0d9b5, type: 3}
+  - stackType: 6
+    poolObject: {fileID: 6600719221395529612, guid: 00e930efc0e9495488c0a1f809cfa233, type: 3}
+  - stackType: 7
+    poolObject: {fileID: 6600719221395529612, guid: ece2d50177f82494592b83cb201073b3, type: 3}
+  - stackType: 8
+    poolObject: {fileID: 6600719221395529612, guid: bd38e35c850aadc4ca4d46a88602e03e, type: 3}
 --- !u!1 &1445738775
 GameObject:
   m_ObjectHideFlags: 0

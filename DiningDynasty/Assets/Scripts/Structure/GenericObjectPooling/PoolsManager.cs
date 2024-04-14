@@ -12,6 +12,7 @@ namespace Structure.GenericObjectPooling
     {
         public PlayerStackType stackType;
         public GameObject poolObject;
+        public int poolSize = 5;
         
         public Pool<PooledPlayerStack> Pool { get; set; }
     }
@@ -30,7 +31,7 @@ namespace Structure.GenericObjectPooling
             CoinPool = new Pool<Coin>(new PrefabFactory<Coin>(coinPrefab, transform));
 
             foreach (var pool in playerStackPools)
-                pool.Pool = new Pool<PooledPlayerStack>(new PrefabFactory<PooledPlayerStack>(pool.poolObject, transform));
+                pool.Pool = new Pool<PooledPlayerStack>(new PrefabFactory<PooledPlayerStack>(pool.poolObject, transform), pool.poolSize);
         }
 
         public Pool<PooledPlayerStack> GetStackPool(PlayerStackType stackType)
