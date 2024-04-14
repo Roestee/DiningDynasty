@@ -17,22 +17,22 @@
     public enum AreaType
     {
         SaladArea,
-        AreaType2,
-        AreaType3
+        SteakArea,
+        FriesArea
     }
 
     public enum MachineType
     {
         SaladMachine,
-        MachineType2,
-        MachineType3
+        SteakMachine,
+        FriesMachine
     }
     
     public enum FieldType
     {
         TomatoField,
-        FieldType2,
-        FieldType3
+        SheepField,
+        PotatoField
     }
 
     public enum TableType
