@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using Structure.GenericObjectPooling;
+using Project.Stacks;
 using Structure.Player.Stack;
 using Structure.Player.Stack.StackTakers;
 using UnityEngine;
@@ -22,6 +22,7 @@ namespace Project.Machines
         private MachineEffectController _effectController;
         private MachineProgressUIController _progressUiController;
         private bool _isWorking;
+        private PlayerStackType _spawnProductType;
         
         private static readonly int Work = Animator.StringToHash("Work");
         private static readonly int Empty = Animator.StringToHash("Empty");
@@ -34,6 +35,8 @@ namespace Project.Machines
             _anim = GetComponent<Animator>();
             _effectController = GetComponent<MachineEffectController>();
             _progressUiController = GetComponent<MachineProgressUIController>();
+
+            _spawnProductType = productTaker.GetStackType();
             
             stackTaker.OnCountChange += OnStackCountChange;
         }
@@ -58,7 +61,7 @@ namespace Project.Machines
                 yield return StartCoroutine(stack.JumToPos(dummyStackTf.position, dummyStackTf.rotation));
                 
                 var pooledStack = (PooledPlayerStack)stack;
-                pooledStack.PushToPool();
+                StackSpawner.Instance.Push(pooledStack);
                 
                 _anim.SetTrigger(Work);
                 _effectController.SetActiveCookingEffects();
@@ -70,21 +73,14 @@ namespace Project.Machines
                 _effectController.SetActiveCookingEffects(false);
                 _effectController.PlayCookedEffect();
                 
-                var product = SpawnProduct();
+                var product = StackSpawner.Instance.SpawnStack(_spawnProductType);
                 product.transform.position = dummyStackTf.position;
                 productTaker.ThrowStack(product);
-
+            
                 yield return GeneralHelpers.GetWait(workAfterWaitTime);
             }
 
             _isWorking = false;
-        }
-        
-        private PooledPlayerStack SpawnProduct()
-        {
-            var pool = PoolsManager.Instance.GetStackPool(productTaker.GetStackType());
-            var product = pool.Pull();
-            return product;
         }
 
         protected virtual void OnDestroy()

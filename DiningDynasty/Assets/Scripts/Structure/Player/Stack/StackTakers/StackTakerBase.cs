@@ -14,6 +14,7 @@ namespace Structure.Player.Stack.StackTakers
 
         [SerializeField] protected StackCell cellPrefab;
         [SerializeField] protected Transform cellsParent;
+        
         [Header("Init Options")]
         [SerializeField] protected int columnCount = 4;
         [SerializeField] protected float distanceBetweenColumn = 0.3f;

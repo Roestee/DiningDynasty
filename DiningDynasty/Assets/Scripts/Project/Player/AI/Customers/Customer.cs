@@ -1,14 +1,11 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
 using Project.Tables;
-using Structure.GenericObjectPooling.Abstracts;
+using Structure.Pool_Spawner.Interfaces;
 
 namespace Project.Player.AI.Customers
 {
-    public class Customer : AIBase, IPoolMember
+    public class Customer : AIBase, IPoolMemberSimple
     {
-        public event Action<IPoolMember> OnDeath;
-
         public CustomerStateMachine StateMachine { get; private set; }
 
         protected override void Awake()
@@ -45,12 +42,7 @@ namespace Project.Player.AI.Customers
         {
             
         }
-        
-        public void PushToPool()
-        {
-            OnDeath?.Invoke(this);
-        }
 
-        #endregion Pool
+        #endregion
     }
 }

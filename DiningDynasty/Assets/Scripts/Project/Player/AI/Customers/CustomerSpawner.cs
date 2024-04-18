@@ -1,32 +1,22 @@
-﻿using Structure.GenericObjectPooling;
-using Structure.GenericObjectPooling.Abstracts;
-using UnityEngine;
+﻿using Structure.Pool_Spawner.Spawner.SpawnerWithPool;
 
 namespace Project.Player.AI.Customers
 {
-    public class CustomerSpawner : MonoBehaviour
+    public class CustomerSpawner : SpawnerMonoWithPoolSimple<Customer>
     {
-        private Pool<Customer> _pool;
-        private Transform _spawnPoint;
-
-        private void Start()
+        protected override void InternalStart()
         {
-            _pool = PoolsManager.Instance.CustomerPool;
+            
         }
 
-        private void SpawnCustomer()
+        protected override void InternalAwake()
         {
-            var customer = _pool.Pull();
-            customer.transform.position = _spawnPoint.position;
-            customer.OnDeath += PushToPool;
-            customer.StateMachine.SetDefaultState();
+            
         }
 
-        private void PushToPool(IPoolMember poolMember)
+        protected override void OnSpawnDone(Customer customer)
         {
-            var customer = (Customer)poolMember;
-            customer.OnDeath -= PushToPool;
-            _pool.Push(customer);
+            
         }
     }
 }

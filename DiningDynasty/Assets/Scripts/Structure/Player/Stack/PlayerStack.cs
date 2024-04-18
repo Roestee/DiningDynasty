@@ -20,7 +20,7 @@ namespace Structure.Player.Stack
     
     public class PlayerStack: MonoBehaviour
     {
-        [SerializeField] private PlayerStackType stackType;
+        [SerializeField] protected PlayerStackType stackType;
         [SerializeField] private Transform stackUpTf;
         [Header("Jump")]
         [SerializeField] private float jumpDuration = 0.3f;

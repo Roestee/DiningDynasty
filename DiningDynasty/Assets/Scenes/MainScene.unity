@@ -1198,27 +1198,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1336677737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7464d8b986144d4a8fa2de7ba027987f, type: 3}
+  m_Script: {fileID: 11500000, guid: df1f9cc932ef417b9d78a8b5c04501ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 3913550167066719813, guid: 96cb74c8f4f3f6c49ba2cdb9458352be, type: 3}
-  playerStackPools:
-  - stackType: 1
-    poolObject: {fileID: 8467978316061816362, guid: 08cd2992f1c95b84190621413030518b, type: 3}
-  - stackType: 2
-    poolObject: {fileID: 6600719221395529612, guid: c6249b9540afd8c4f9710e7ee7186eb9, type: 3}
-  - stackType: 3
-    poolObject: {fileID: 6600719221395529612, guid: 356b63562a7e43d4b985ec0423e081db, type: 3}
-  - stackType: 4
-    poolObject: {fileID: 6600719221395529612, guid: e9048a9faca5fb34a8f687e222a31fe3, type: 3}
-  - stackType: 5
-    poolObject: {fileID: 6600719221395529612, guid: 1750003f925da0e4eab7d97979f0d9b5, type: 3}
-  - stackType: 6
-    poolObject: {fileID: 6600719221395529612, guid: 00e930efc0e9495488c0a1f809cfa233, type: 3}
-  - stackType: 7
-    poolObject: {fileID: 6600719221395529612, guid: ece2d50177f82494592b83cb201073b3, type: 3}
-  - stackType: 8
-    poolObject: {fileID: 6600719221395529612, guid: bd38e35c850aadc4ca4d46a88602e03e, type: 3}
+  simplePoolObjects:
+  - initSpawnCount: 5
+    gameObject: {fileID: 7058934193244126951, guid: c58ad73192faad84a93eba797983a9a9, type: 3}
+  typedPoolObjects:
+  - typeName: PooledPlayerStack
+    typedObjects:
+    - initSpawnCount: 5
+      gameObject: {fileID: 6600719221395529612, guid: bd38e35c850aadc4ca4d46a88602e03e, type: 3}
+    - initSpawnCount: 5
+      gameObject: {fileID: 6600719221395529612, guid: e9048a9faca5fb34a8f687e222a31fe3, type: 3}
+    - initSpawnCount: 5
+      gameObject: {fileID: 6600719221395529612, guid: ece2d50177f82494592b83cb201073b3, type: 3}
+    - initSpawnCount: 5
+      gameObject: {fileID: 6600719221395529612, guid: c6249b9540afd8c4f9710e7ee7186eb9, type: 3}
+    - initSpawnCount: 5
+      gameObject: {fileID: 6600719221395529612, guid: 356b63562a7e43d4b985ec0423e081db, type: 3}
+    - initSpawnCount: 5
+      gameObject: {fileID: 6600719221395529612, guid: 00e930efc0e9495488c0a1f809cfa233, type: 3}
+    - initSpawnCount: 5
+      gameObject: {fileID: 6600719221395529612, guid: 1750003f925da0e4eab7d97979f0d9b5, type: 3}
+    - initSpawnCount: 5
+      gameObject: {fileID: 8467978316061816362, guid: 08cd2992f1c95b84190621413030518b, type: 3}
 --- !u!1 &1445738775
 GameObject:
   m_ObjectHideFlags: 0

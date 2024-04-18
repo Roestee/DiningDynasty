@@ -1,5 +1,4 @@
-﻿using Structure.GenericObjectPooling;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Project.Coins
 {
@@ -7,9 +6,7 @@ namespace Project.Coins
     {
         public void Throw(Transform targetTf)
         {
-            var coin = PoolsManager.Instance.CoinPool.Pull();
-            coin.transform.position = transform.position;
-            coin.Throw(targetTf);
+
         }
     }
 }

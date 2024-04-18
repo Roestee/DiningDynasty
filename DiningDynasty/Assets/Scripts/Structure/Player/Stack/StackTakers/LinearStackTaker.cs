@@ -31,7 +31,10 @@ namespace Structure.Player.Stack.StackTakers
                         var xPos = (k - horizontalCount * 0.5f) * distanceBetweenStack;
                         var cell = Instantiate(cellPrefab, cellsParent);
                         Cells.Add(cell);
-                        cell.transform.localPosition = new Vector3(xPos + horizontalOffset, yPos, zPos + verticalOffset);
+                        cell.transform.localPosition = new Vector3(
+                            xPos + horizontalOffset, 
+                            yPos, 
+                            zPos + verticalOffset);
                     }
                 }
             }
@@ -50,7 +53,10 @@ namespace Structure.Player.Stack.StackTakers
                         var xPos = (k - horizontalCount * 0.5f) * distanceBetweenStack;
                         var currentPos = transform.position;
                         Gizmos.color = Color.red;
-                        Gizmos.DrawSphere( new Vector3(currentPos.x + xPos + horizontalOffset, currentPos.y + yPos, currentPos.z + zPos + verticalOffset), cellRadius);
+                        Gizmos.DrawSphere( new Vector3(
+                            currentPos.x + xPos + horizontalOffset, 
+                            currentPos.y + yPos, 
+                            currentPos.z + zPos + verticalOffset), cellRadius);
                         Gizmos.color = Color.white;
                     }
                 }

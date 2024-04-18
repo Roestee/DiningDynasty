@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Linq;
 using Project.MeshOpener;
+using Project.Stacks;
 using Sirenix.Utilities;
-using Structure.GenericObjectPooling;
 using Structure.Player;
 using Structure.Player.Stack;
 using UnityEngine;
@@ -68,7 +68,7 @@ namespace Project.Fields.TomatoField
                 var tomato = _tomatoes.FirstOrDefault(p => p.IsGrown);
                 StartCoroutine(tomato.Grow());
                 
-                var stack = PoolsManager.Instance.GetStackPool(PlayerStackType.TomatoStack).Pull();
+                var stack = StackSpawner.Instance.SpawnStack(PlayerStackType.TomatoStack);
                 stack.transform.SetPositionAndRotation(tomato.transform.position, tomato.transform.rotation);
                 stack.OnPlayerInteract(_currentInteract, true);
                 
